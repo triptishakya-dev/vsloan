@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+        <div id="navbar-container"></div>
+        <div id="footer-container"></div>
+
+     <script>
+        fetch('./component/shared/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+             fetch('./component/shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
 </body>
 </html>
